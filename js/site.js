@@ -1,12 +1,17 @@
-function displayMessage() {
-    let msg = document.getElementById('message').value;
-    //alert(msg);
+function add() {
+    // get the numbers
+    // turn them into integers
+    // add the first and second numbers
+    // display the result
 
-    Swal.fire(
-        {
-            backdrop: false,
-            title: 'App Name',
-            text: msg
-        }
-    );
+    let numberOne = document.getElementById('firstNumber').value;
+    let numberTwo = document.getElementById('secondNumber').value;
+
+    numberOne = parseFloat(numberOne);
+    numberTwo = parseFloat(numberTwo);
+
+    let sum = numberOne + numberTwo;
+
+    let resultsDiv = document.getElementById('results');
+    resultsDiv.innerText = sum;
 }
