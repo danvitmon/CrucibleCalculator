@@ -102,8 +102,25 @@ function multiplyAll() {
 }
 
 function minimum() {
- // check each number and see if its smaller than
- // the smallest number ive found so far
+  let numberString = document.getElementById("numberSeries").value;
+
+  let numberArr = numberString.split("");
+
+  let min = parseInt(numberArr[0]);
+
+  for (let i = 0; i < numberArr.length; i = i + 1) {
+    let currentNumber = numberArr[i];
+    
+    currentNumber = parseInt(currentNumber);
+
+    if(currentNumber < min) {
+      max = currentNumber;
+    }
+
+  }
+
+  let resultsDiv = document.getElementById("results");
+  resultsDiv.innerText = min;
 }
 
 function maximum() {
@@ -112,28 +129,21 @@ function maximum() {
 
     let numberArr = numberString.split("");
   
-    let sum = 0;
+    let max = parseInt(numberArr[0]);
   
     for (let i = 0; i < numberArr.length; i = i + 1) {
-      let currentNumberOne = numberArr[i];
+      let currentNumber = numberArr[i];
       
-      currentNumberOne = parseInt(currentNumberOne);
-      
-      let currentNumberTwo = numberArr[i + 1];
-      currentNumberTwo = parseInt(currentNumberTwo);
+      currentNumber = parseInt(currentNumber);
 
-      //if(currentNumberOne > currentNumberTwo) {
-        //max = currentNumberOne;
-      //} else {
-        //max = currentNumberTwo;
-      //}
-
-      //maxArr = max;
+      if(currentNumber > max) {
+        max = currentNumber;
+      }
   
     }
   
     let resultsDiv = document.getElementById("results");
-    resultsDiv.innerText = maxArr;
+    resultsDiv.innerText = max;
  // check each number and see if its larger than
  // the largest number ive found so far
 }
